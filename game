@@ -1,5 +1,5 @@
 class tictactoe
 
-  public statis voice main (String[] args) {
+  public static void main (String[] args) {
     System.out.print("Hello World!");
   }
