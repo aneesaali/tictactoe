@@ -1,0 +1,37 @@
+body {
+    background-color: lightgoldenrodyellow;
+}
+h1 {
+    text-align: center;
+}
+p {
+    text-align: center;
+    font-size: large;
+}
+.grid-container {
+    justify-content: center;
+    align-content: center;
+    grid-template-columns: auto auto auto;
+}
+.grid-item {
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    line-height: 200px;
+    font-size: xx-large;
+    background-color: #C7D3D4FF;
+    border: 2px solid #603F83FF;
+}
+.player{
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    grid-template-columns: auto auto;
+    gap: 20px;
+}
+.button {
+    align-items: baseline;
+    width: 125px;
+    height: 125px;
+    font-size: xx-large;
+}
