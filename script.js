@@ -24,20 +24,19 @@ exit: if (board[id] == player){
         board.splice(id, 1, player);
         document.getElementById(id).innerHTML = player;
         document.getElementById(id).style.fontFamily = 'Arial';
-        document.getElementById(id).style.fontSize = '1000%';
+        document.getElementById(id).style.fontSize = '750%';
         if (emptyspaces(board) == 0){
             disable();
-            errormsg = "Tied game!";
+            errormsg = "Tied game!<br> <br>Do you want to play again?";
             break exit;
         }
         cpuplay(board);
         if(check(board, cpu) == cpu){
             disable();
-            errormsg = "Sorry! You lost the game.";
+            errormsg = "Sorry! You lost the game.<br> <br>Do you want to play again?";
             break exit;
         }
     }
-    errormsg += "<br> <br>Do you want to play again?"
     document.getElementById("instructions").innerHTML = errormsg
     document.getElementById("instructions").style.display = "block";
 }
@@ -51,6 +50,7 @@ function cpuplay(array){
             array[i] = cpu;
             if (cpu == 'X') {
                 score = minimax(array, 0, false);
+                alert(score);
                 array[i] = '0';
                 if (score > max){
                     max = score;
@@ -70,7 +70,7 @@ function cpuplay(array){
     array[optimal] = cpu;
     document.getElementById(optimal).innerHTML = cpu;
     document.getElementById(optimal).style.fontFamily = 'Arial';
-    document.getElementById(optimal).style.fontSize = '1000%';
+    document.getElementById(optimal).style.fontSize = '750%';
     return array;
 }
 
@@ -86,13 +86,13 @@ function minimax(array, depth, isMaximizing){
     }
 
     if (check(array, maximizing) == maximizing){
-      return score = 1;
+      return score = 0 - depth;
     }
     else if (check(array, minimizing) == minimizing){
-      return score = -1;
+      return score = -19 + depth;
     }
     else if (emptyspaces(array) == 0) {
-      return score = 0;
+      return score = -10;
     }
 
     if (isMaximizing){
@@ -117,7 +117,7 @@ function minimax(array, depth, isMaximizing){
       }
       return min;
     }
-  }
+}
 
 function check(array, user) {
     var winner;
@@ -152,13 +152,4 @@ function disable(){
         document.getElementById(i).onclick = null;
     }
     document.getElementById("playagain").style.display = "grid";
-}
-
-function repeat(){
-    board = [0,0,0,0,0,0,0,0,0];
-    score = 0;
-    for(var i = 0; i < 9; i++){
-        document.getElementById(i).innerHTML = "";
-        document.getElementById(i).onclick = updateBoard(i);
-    }
 }

@@ -14,11 +14,10 @@ p {
     grid-template-columns: auto auto auto;
 }
 .grid-item {
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     text-align: center;
-    line-height: 200px;
-    font-size: xx-large;
+    line-height: 150px;
     background-color: #C7D3D4FF;
     border: 2px solid #603F83FF;
 }

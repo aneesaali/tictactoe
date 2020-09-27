@@ -26,9 +26,9 @@
     <button class=button onclick="setplayer('O', 'X')">O</button>
 </section>
 
-<div id="playagain" style="display:none">
-    <button class=button onclick=repeat()>YES</button>
-    <button class=button>NO</button>
+<div id="playagain" class="player" style="display:none">
+    <button class=button onclick="location.reload()">YES</button>
+    <button class=button onclick="self.close()">NO</button>
 </div>
 
 <script src="script.js"></script>
