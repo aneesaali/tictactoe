@@ -93,7 +93,7 @@ function minimax(array, depth, isMaximizing){
       return score = 0 - depth;
     }
     else if (check(array, minimizing) == minimizing){
-      return score = -19 + depth;
+      return score = -20 + depth;
     }
     else if (emptyspaces(array) == 0) {
       return score = -10;
