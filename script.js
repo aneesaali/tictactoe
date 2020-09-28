@@ -36,6 +36,11 @@ exit: if (board[id] == player){
             errormsg = "Sorry! You lost the game.<br> <br>Do you want to play again?";
             break exit;
         }
+        if (emptyspaces(board) == 0){
+            disable();
+            errormsg = "Tied game!<br> <br>Do you want to play again?";
+            break exit;
+        }
     }
     document.getElementById("instructions").innerHTML = errormsg
     document.getElementById("instructions").style.display = "block";
