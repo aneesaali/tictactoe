@@ -50,7 +50,6 @@ function cpuplay(array){
             array[i] = cpu;
             if (cpu == 'X') {
                 score = minimax(array, 0, false);
-                alert(score);
                 array[i] = '0';
                 if (score > max){
                     max = score;
